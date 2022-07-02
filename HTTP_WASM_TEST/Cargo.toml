@@ -1,0 +1,28 @@
+[package]
+name = "HTTP_WASM_TEST"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+
+
+
+############################## OPTIMIZATION STUFF ##############################
+
+# +Use RUSTFLAGS="-C target-cpu=native"
+
+[profile.release]
+lto=true
+codegen-units=1
+incremental=false
+strip=true
+
+[profile.release.package."*"]
+codegen-units=1
+incremental=false
+strip=true
+
+# No build scripts, proc macros, and their dependencies,so no more options need

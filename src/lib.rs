@@ -1,19 +1,13 @@
 use ed25519_dalek::{Keypair,Signature,Signer,Verifier,PublicKey};
 use rand::{RngCore,rngs::OsRng};
-use bincode::deserialize;
 
 use wasm_bindgen::prelude::*;
 use js_sys;
 
 
-// To test queries via WASM
-use hyper::{Client,body::HttpBody as _};
-
-// To parse bodies
-use tokio::io::{stdout, AsyncWriteExt as _};
-
-
-
+// To test access to FS via WASM
+use std::fs::File;
+use std::io::prelude::*;
 
 
 
@@ -58,24 +52,33 @@ pub fn verify(rawPubkey:&[u8],data:&[u8],signa:&[u8]) -> bool {
 
 
 #[wasm_bindgen]
-pub async fn call_api() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
+pub fn custom_wasm(){
 
-    // This is where we will setup our HTTP client requests.
-    // Still inside `async fn main`...
-    let client = Client::new();
-
-    // Parse an `http::Uri`...
-    let uri = "http://httpbin.org/ip".parse()?;
-
-    // Await the response...
-    let mut resp = client.get(uri).await?;
+    match File::open("foo.txt") {
+      
+        // The file is open (no error).
+        Ok(mut file) => {
     
-    
-    // And now...
-    while let Some(chunk) = resp.body_mut().data().await {
-        stdout().write_all(&chunk?).await?;
+            let mut content = String::new();
+
+            // Read all the file content into a variable (ignoring the result of the operation).
+            file.read_to_string(&mut content).unwrap();
+
+            println!("
+            *************************************
+                \n\nFrom file ===> {}\n\n
+            *************************************
+                
+            ",content)
+
+
+            // The file is automatically closed when is goes out of scope.
+        },
+        // Error handling.
+        Err(error) => {
+            println!("Error opening file {}: {}", "foo.txt", error);
+        },
     }
-  
-    Ok(())
+
 
 }

@@ -22,14 +22,6 @@ bincode = "1.3.3"
 wasm-bindgen = "0.2.80"
 js-sys = "0.3.57"
 
-####### TO TEST HTTP CALLS
-
-hyper = { version = "0.14", features = ["full"] }
-tokio = { version = "1", features = ["full"] }
-
-
-
-
 
 [lib]
 crate-type=["cdylib"]

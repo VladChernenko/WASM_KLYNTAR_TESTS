@@ -16,7 +16,9 @@ console.log(signa)
 
 console.log(mod.verify(keys.slice(32,64),[10,46,6],signa))
 
-mod.custom_wasm();
+console.log(mod.simple_print());
+
+console.log(mod.custom_wasm());
 
 // console.time('A')
 // for(let i=0;i<10000;i++) mod.verify(PUB,[10,46,6],signa)

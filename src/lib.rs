@@ -50,9 +50,18 @@ pub fn verify(rawPubkey:&[u8],data:&[u8],signa:&[u8]) -> bool {
 }
 
 
+#[wasm_bindgen]
+pub fn simple_print(){
+
+    println!("Simple println");
+
+}
+
 
 #[wasm_bindgen]
-pub fn custom_wasm(){
+pub fn custom_wasm()->js_sys::Uint8Array{
+
+    println!("Going to read the file");
 
     match File::open("foo.txt") {
       
@@ -69,16 +78,26 @@ pub fn custom_wasm(){
                 \n\nFrom file ===> {}\n\n
             *************************************
                 
-            ",content)
+            ",content);
 
+            let val=&content.as_bytes()[..];
+
+            return js_sys::Uint8Array::from(val);
 
             // The file is automatically closed when is goes out of scope.
         },
         // Error handling.
         Err(error) => {
             println!("Error opening file {}: {}", "foo.txt", error);
+
+            let val=&"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa".as_bytes()[..];
+        
+            return js_sys::Uint8Array::from(val);
+
         },
     }
 
-
 }
+
+
+

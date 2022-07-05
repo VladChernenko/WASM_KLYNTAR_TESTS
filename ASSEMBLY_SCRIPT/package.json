@@ -1,0 +1,16 @@
+{
+  "name": "assembly_script",
+  "version": "1.0.0",
+  "description": "```shell",
+  "main": "index.js",
+  "type":"module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@assemblyscript/loader": "^0.20.13"
+  }
+}

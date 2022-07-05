@@ -3,7 +3,11 @@
 
 ```shell
 
+//Globally
 npm install assemblyscript -g
+
+//In project dir
+pnpm add @assemblyscript/loader
 
 ```
 
@@ -12,5 +16,15 @@ Then use my default flags set
 ```shell
 
 asc add.ts -O -b esm -o add.wasm
+
+```
+
+
+To pass strings
+
+
+```shell
+
+asc concat.ts -b esm -o concat.wasm --exportRuntime
 
 ```

@@ -1,0 +1,13 @@
+lockfileVersion: 5.3
+
+specifiers:
+  '@assemblyscript/loader': ^0.20.13
+
+dependencies:
+  '@assemblyscript/loader': 0.20.13
+
+packages:
+
+  /@assemblyscript/loader/0.20.13:
+    resolution: {integrity: sha512-W8+yrxMIfoyfmLR/3wOOrDgc+sz5rheWgVS8XiyIMu8jzqTnwL9TIdhIoVsWb9PiPcfuW1VjkqSlh7s7epSytA==}
+    dev: false

@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "assemblyscript":"^0.19.9",
     "@assemblyscript/loader": "^0.20.13"
   }
 }

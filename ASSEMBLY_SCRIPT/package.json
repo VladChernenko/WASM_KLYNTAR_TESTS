@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "```shell",
   "main": "index.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +11,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "assemblyscript":"^0.19.9",
-    "@assemblyscript/loader": "^0.20.13"
+    "@assemblyscript/loader": "^0.20.13",
+    "assemblyscript": "^0.19.9",
+    "wasm-json-toolkit": "^0.2.6",
+    "wasm-metering": "^0.2.1"
   }
 }

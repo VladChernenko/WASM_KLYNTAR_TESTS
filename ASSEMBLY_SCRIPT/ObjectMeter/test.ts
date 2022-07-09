@@ -1,3 +1,24 @@
+// Compiled with                asc test.ts -o test.wasm -O --exportRuntime
+
+
+
+export function getX5(num:i32): i32 {
+
+    for(let i: i32=0;i<5;i++){
+
+        num++
+
+    }
+ 
+    return num;
+
+}
+
+
+export function cat( str1: string, str2: string ): string {
+    return str1 + "|" + str2;
+}
+
 export class Vector2D {
     x: f32;
     y: f32;

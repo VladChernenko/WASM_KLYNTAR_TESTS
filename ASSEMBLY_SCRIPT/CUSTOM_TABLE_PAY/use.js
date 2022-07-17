@@ -7,37 +7,70 @@ const wasm = fs.readFileSync('test.wasm')
 
 const costTable = JSON.parse(fs.readFileSync('costTable.json'))
 
+
+//------------------- ТЕСТИРУЕМ ЭКЗЕМПЛЯР С КАСТОМНОЙ ТАБЛИЦОЙ И БЕЗ -------------------
+
 const meteredWasm = metering.meterWASM(wasm,{
+    meterType: 'i32'
+})
+
+const meteredWasmCustomTable = metering.meterWASM(wasm,{
   meterType: 'i32',
   costTable
 })
 
-const limit = 2000000
-let gasUsed = 0
+//------------------- Лимиты энергии -------------------
 
-let wasmMetered = await loader.instantiate(meteredWasm,{
+const limitForCustom = 2000000
+let energyForCustom = 0
+
+let wasmMeteredCustomTable = await loader.instantiate(meteredWasmCustomTable,{
     'metering': {
-      'usegas': (gas) => {
-        gasUsed += gas
-        if (gasUsed > limit) {
-          throw new Error('out of gas!')
+      'usegas': (energy) => {
+        energyForCustom += energy
+        if (energyForCustom > limitForCustom) {
+          throw new Error('No more energy!')
         }
       }
     }
-  });
+});
 
-console.log('Default WASM => ',wasm)
-console.log('Metered WASM => ',meteredWasm)
+
+
+const limitForDef = 2000000
+let energyForDef = 0
+
+let wasmMeteredDef = await loader.instantiate(meteredWasm,{
+    'metering': {
+      'usegas': (energy) => {
+        energyForDef += energy
+        if (energyForDef > limitForDef) {
+          throw new Error('No more energy!')
+        }
+      }
+    }
+});
+
 
 
 //------------------------ Тест обновлённой таблицы по оплате
 
+// * на примере SubInts - должно быть одинаково
 
-const result = wasmMetered.exports.AddInts(10,33);
-console.log(`Result:${result}, gas used ${gasUsed * 1e-4}`) // result:720, gas used 0.4177
+const result = wasmMeteredCustomTable.exports.SubInts(10,33);
+console.log(`CUSTOM Result:${result}, gas used ${energyForCustom * 1e-4}`) // result:720, gas used 0.4177
+
+const result_def = wasmMeteredDef.exports.SubInts(10,33);
+console.log(`DEF Result:${result_def}, gas used ${energyForDef * 1e-4}`) // result:720, gas used 0.4177
 
 
+// * на примере AddInts
 
+const resultPP = wasmMeteredCustomTable.exports.AddInts(10,33);
+console.log(`CUSTOM Result:${resultPP}, gas used ${energyForCustom * 1e-4}`) // result:720, gas used 0.4177
+
+const result_de = wasmMeteredDef.exports.AddInts(10,33);
+console.log(`DEF Result:${result_de}, gas used ${energyForDef * 1e-4}`) // result:720, gas used 0.4177
 
 
 //console.log(module.exports.getX5(10))

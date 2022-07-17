@@ -2,7 +2,7 @@
 
 
 
-export function getX5(num:i32): i32 {
+export function getX5(num:f32): f32 {
 
     for(let i: i32=0;i<5;i++){
 
@@ -39,5 +39,14 @@ export class Vector2D {
         return this;
         
     }
+
+}
+
+
+// Протестируем даты
+
+export function getKlyntarData( str1: string, str2: string ): string {
+
+    
 
 }

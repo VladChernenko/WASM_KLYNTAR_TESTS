@@ -1,0 +1,23 @@
+(module
+ (type $i32_i32_=>_i32 (func (param i32 i32) (result i32)))
+ (memory $0 0)
+ (table $0 1 funcref)
+ (global $global$0 i32 (i32.const 8))
+ (global $global$1 (mut i32) (i32.const 16392))
+ (global $global$2 i32 (i32.const 16392))
+ (export "AddInts" (func $0))
+ (export "SubInts" (func $1))
+ (export "memory" (memory $0))
+ (func $0 (param $0 i32) (param $1 i32) (result i32)
+  (i32.add
+   (local.get $0)
+   (local.get $1)
+  )
+ )
+ (func $1 (param $0 i32) (param $1 i32) (result i32)
+  (i32.sub
+   (local.get $0)
+   (local.get $1)
+  )
+ )
+)

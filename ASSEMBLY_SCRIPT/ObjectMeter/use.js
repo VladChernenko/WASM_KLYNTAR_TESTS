@@ -34,7 +34,7 @@ console.log('Metered WASM => ',meteredWasm)
 const result = wasmMetered.exports.getX5(10);
 console.log(`result:${result}, gas used ${gasUsed * 1e-4}`) // result:720, gas used 0.4177
 
-//-------------------------- Тестирую газ и строки ------------------------
+//-------------------------- Тестирую энергию и строки ------------------------
 
 // необходимо использовать __newString, __getString
 // компиляция с флагом --exportRuntime
@@ -49,3 +49,7 @@ let cat_string = wasmMetered.exports.__getString(cat_str_index);
 console.log('String is =>',cat_string)
 
 console.log(`Gas => ${gasUsed * 1e-4} / ${limit * 1e-4}`)
+
+
+//-------------------------- Энергия и создание объектов ------------------------
+

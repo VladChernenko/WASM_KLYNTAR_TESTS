@@ -1,0 +1,34 @@
+[package]
+name = "klyntar_test_ed25519_rust_wasm"
+version = "0.1.0"
+edition = "2021"
+
+
+[lib]
+crate-type=["cdylib"]
+
+
+############################ DEPENDENCIES ###########################
+
+[dependencies]
+ed25519-dalek = {version="1.0.1"}
+
+
+############################## OPTIMIZATION STUFF ##############################
+
+# +Use RUSTFLAGS="-C target-cpu=native"
+
+
+[profile.release]
+lto=true
+codegen-units=1
+incremental=true
+strip=true
+
+############# <<<<< FOR DEPENDENCIES >>>>> #############
+
+[profile.release.package."*"]
+
+codegen-units=1
+incremental=true
+strip=true

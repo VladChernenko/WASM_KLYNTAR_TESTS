@@ -28,3 +28,24 @@ To pass strings
 asc concat.ts -b esm -o concat.wasm --exportRuntime
 
 ```
+
+
+# Getting started with Rust and KLYNTAR VM
+
+Create lib package
+
+```shell
+
+cargo init MY_RUST_CONTRACT --lib
+
+cd MY_RUST_CONTRACT
+
+```
+
+Finally build
+
+```shell
+
+cargo build --target wasm32-unknown-unknown --release
+
+```

@@ -7,7 +7,7 @@ import fs from 'fs';
     // необходимо использовать __newString, __getString
     // компиляция с флагом --exportRuntime
     let first_str_index = module.exports.__newString("DA");
-    let second_str_index = module.exports.__newString("PIZDA");
+    let second_str_index = module.exports.__newString("Sorry:)");
     let cat_str_index = module.exports.cat(first_str_index,second_str_index);
 
     console.log('DEFAULT ',cat_str_index);

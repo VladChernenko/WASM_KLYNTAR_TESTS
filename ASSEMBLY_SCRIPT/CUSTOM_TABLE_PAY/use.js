@@ -86,7 +86,7 @@ console.log(`DEF Result:${result_de}, gas used ${energyForDef * 1e-4}`) // resul
 // необходимо использовать __newString, __getString
 // компиляция с флагом --exportRuntime
 // let first_str_index = wasmMetered.exports.__newString("DA");
-// let second_str_index = wasmMetered.exports.__newString("PIZDA");
+// let second_str_index = wasmMetered.exports.__newString("Sorry:)");
 // let cat_str_index = wasmMetered.exports.cat(first_str_index,second_str_index);
 
 // console.log('DEFAULT ',cat_str_index);

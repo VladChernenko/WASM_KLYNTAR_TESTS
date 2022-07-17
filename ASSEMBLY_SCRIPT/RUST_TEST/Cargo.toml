@@ -1,0 +1,32 @@
+############################## DEFAULT ##############################
+
+[package]
+name = "test_with_rust"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type=["cdylib"]
+
+############################ DEPENDENCIES ###########################
+
+# Let's try without dependencies
+
+############################## OPTIMIZATION STUFF ##############################
+
+# +Use RUSTFLAGS="-C target-cpu=native"
+
+
+[profile.release]
+lto=true
+codegen-units=1
+incremental=true
+strip=true
+
+############# <<<<< FOR DEPENDENCIES >>>>> #############
+
+[profile.release.package."*"]
+
+codegen-units=1
+incremental=true
+strip=true

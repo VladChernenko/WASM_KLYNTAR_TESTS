@@ -39,7 +39,7 @@ console.log(`result:${result}, gas used ${gasUsed * 1e-4}`) // result:720, gas u
 // необходимо использовать __newString, __getString
 // компиляция с флагом --exportRuntime
 let first_str_index = wasmMetered.exports.__newString("DA");
-let second_str_index = wasmMetered.exports.__newString("PIZDA");
+let second_str_index = wasmMetered.exports.__newString("Sorry:)");
 let cat_str_index = wasmMetered.exports.cat(first_str_index,second_str_index);
 
 console.log('DEFAULT ',cat_str_index);

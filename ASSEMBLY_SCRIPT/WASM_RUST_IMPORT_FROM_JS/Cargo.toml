@@ -1,18 +1,16 @@
+############################## DEFAULT ##############################
+
 [package]
-name = "klyntar_test_ed25519_rust_wasm"
+name = "test_with_rust"
 version = "0.1.0"
 edition = "2021"
-
 
 [lib]
 crate-type=["cdylib"]
 
-
 ############################ DEPENDENCIES ###########################
 
-[dependencies]
-ed25519-dalek = {version="1.0.1"}
-js-sys = "0.3.57"
+# Let's try without dependencies
 
 ############################## OPTIMIZATION STUFF ##############################
 

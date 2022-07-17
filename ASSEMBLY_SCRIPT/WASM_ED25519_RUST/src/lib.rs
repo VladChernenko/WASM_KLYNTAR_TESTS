@@ -1,17 +1,18 @@
 use ed25519_dalek::{Keypair,Signature,Signer,Verifier,PublicKey};
 
+use js_sys;
 
 //----------------------------- PUBLIC AREA -----------------------------
 
 
 #[no_mangle]
-pub extern "C" fn sign(rawKeyPair:[u8;64],data:&[u8]) -> [u8;64] {
+pub extern "C" fn sign(rawKeyPair:[u8;64],data:&[u8]) -> js_sys::Uint8Array {
 
     let keypair=Keypair::from_bytes(&rawKeyPair).unwrap();//derive keypair
 
     let signa=&keypair.sign(data).to_bytes();//get raw signature
 
-    *signa
+    js_sys::Uint8Array::from(&signa[..])
 
 }
 

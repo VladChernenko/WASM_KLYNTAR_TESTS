@@ -34,7 +34,7 @@ let wasmMetered = await loader.instantiate(meteredWasm,{
 
 const result = wasmMetered.exports.AddInts(100,20);
 
-console.log(`Result:${result}, gas used ${energyUsed * 1e-4}`);
+console.log(`Result:${result}, energy used ${energyUsed * 1e-4}`);
 
 //---------------------------- ED25519 TEST ----------------------------
 
@@ -60,4 +60,4 @@ let signa = wasmMetered.exports.sign(secretKey,new Uint8Array([10,20,30]))
 
 console.log(signa)
 
-// console.log(`Factorial result:${factorialResult}, gas used ${energyUsed * 1e-4}`);
+// console.log(`Factorial result:${factorialResult}, energy used ${energyUsed * 1e-4}`);

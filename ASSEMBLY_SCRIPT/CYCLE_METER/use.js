@@ -37,13 +37,13 @@ console.log('Metered WASM => ',meteredWasm)
 //------------------------ Тестировал чтоб оно в сумме считало
 
 const result = wasmMetered.exports.getX5(10);
-console.log(`result:${result}, gas used ${gasUsed * 1e-4}`) // result:720, gas used 0.4177
+console.log(`result:${result}, energy used ${gasUsed * 1e-4}`) // result:720, energy used 0.4177
 
 const result2 = wasmMetered.exports.getX5(10);
-console.log(`result:${result2}, gas used ${gasUsed * 1e-4}`) // result:720, gas used 0.4177
+console.log(`result:${result2}, energy used ${gasUsed * 1e-4}`) // result:720, energy used 0.4177
 
 const result3 = wasmMetered.exports.getX5(10);
-console.log(`result:${result3}, gas used ${gasUsed * 1e-4}`)
+console.log(`result:${result3}, energy used ${gasUsed * 1e-4}`)
 
 //---------------------------- Тестирование lambda функции ----------------------------
 
@@ -51,4 +51,4 @@ console.log('Lambda test => ',wasmMetered.exports.testLambda(10))
 
 
 // const result3 = wasmMetered.exports.getX7(10);
-// console.log(`result:${result3}, gas used ${gasUsed * 1e-4}`)
+// console.log(`result:${result3}, energy used ${gasUsed * 1e-4}`)

@@ -15,6 +15,6 @@
     "assemblyscript": "^0.19.9",
     "wasm-json-toolkit": "^0.2.6",
     "wasm-metering": "^0.2.1",
-    "wat-wasm":"^v1.0.43"
+    "wat-wasm": "^v1.0.43"
   }
 }

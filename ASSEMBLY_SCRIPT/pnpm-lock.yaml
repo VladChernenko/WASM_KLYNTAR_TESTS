@@ -3,19 +3,34 @@ lockfileVersion: 5.3
 specifiers:
   '@assemblyscript/loader': ^0.20.13
   assemblyscript: ^0.19.9
+  json-as: ^0.2.6
   wasm-json-toolkit: ^0.2.6
   wasm-metering: ^0.2.1
+  wat-wasm: ^v1.0.43
 
 dependencies:
   '@assemblyscript/loader': 0.20.13
   assemblyscript: 0.19.23
+  json-as: 0.2.6
   wasm-json-toolkit: 0.2.6
   wasm-metering: 0.2.1
+  wat-wasm: 1.0.43
 
 packages:
 
   /@assemblyscript/loader/0.20.13:
     resolution: {integrity: sha512-W8+yrxMIfoyfmLR/3wOOrDgc+sz5rheWgVS8XiyIMu8jzqTnwL9TIdhIoVsWb9PiPcfuW1VjkqSlh7s7epSytA==}
+    dev: false
+
+  /ansi-styles/4.3.0:
+    resolution: {integrity: sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg==}
+    engines: {node: '>=8'}
+    dependencies:
+      color-convert: 2.0.1
+    dev: false
+
+  /as-string-sink/0.4.2:
+    resolution: {integrity: sha512-eOuOYPUwwv4QumoJIa7XxyS0OjXI6CyZz2dtba/hTeG5hzhq58HzAPD2FbHhjfYUXQaSAacFnJ9g2Zlfw56LgQ==}
     dev: false
 
   /assemblyscript/0.19.23:
@@ -29,6 +44,11 @@ packages:
 
   /binaryen/102.0.0-nightly.20211028:
     resolution: {integrity: sha512-GCJBVB5exbxzzvyt8MGDv/MeUjs6gkXDvf4xOIItRBptYl0Tz5sm1o/uG95YK0L0VeG5ajDu3hRtkBP2kzqC5w==}
+    hasBin: true
+    dev: false
+
+  /binaryen/98.0.0:
+    resolution: {integrity: sha512-8wIRIp+uBCL1XpJA9F+zL9TyEsPOIEIaru2KqEPls+nBHx/y64L1isybaOQ+myzn6QgNpSEYMaSH10gaK4ddJg==}
     hasBin: true
     dev: false
 
@@ -58,6 +78,36 @@ packages:
       safe-buffer: 5.2.1
     dev: false
 
+  /chalk/3.0.0:
+    resolution: {integrity: sha512-4D3B6Wf41KOYRFdszmDqMCGq5VV/uMAB273JILmO+3jAlh8X4qDtdtgCR3fxtbLEMzSx22QdhnDcJvu2u1fVwg==}
+    engines: {node: '>=8'}
+    dependencies:
+      ansi-styles: 4.3.0
+      supports-color: 7.2.0
+    dev: false
+
+  /color-convert/2.0.1:
+    resolution: {integrity: sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==}
+    engines: {node: '>=7.0.0'}
+    dependencies:
+      color-name: 1.1.4
+    dev: false
+
+  /color-name/1.1.4:
+    resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
+    dev: false
+
+  /has-flag/4.0.0:
+    resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
+    engines: {node: '>=8'}
+    dev: false
+
+  /json-as/0.2.6:
+    resolution: {integrity: sha512-adGnfJB57eQwVnw0yP3b0yUBhRWa9QUr/JDAgjYV2yvbl5ckV9P3ARAGwXywiZhOE854k1zL29vB7uGRZhM0cQ==}
+    dependencies:
+      as-string-sink: 0.4.2
+    dev: false
+
   /leb128/0.0.4:
     resolution: {integrity: sha512-2zejk0fCIgY8RVcc/KzvyfpDio5Oo8HgPZmkrOmdwmbk0KpKpgD+JKwikxKk8cZYkANIhwHK50SNukkCm3XkCQ==}
     dependencies:
@@ -85,6 +135,18 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
+  /supports-color/7.2.0:
+    resolution: {integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==}
+    engines: {node: '>=8'}
+    dependencies:
+      has-flag: 4.0.0
+    dev: false
+
+  /wabt/1.0.23:
+    resolution: {integrity: sha512-gN1CPmpqDenmNhUmybOCa2ZsE87oTnSZ/eLfNuNsS6753O3EGdB9pNb9ETH5GHHJZeAlxVgzH3MztMCEBiLj/w==}
+    hasBin: true
+    dev: false
+
   /wasm-json-toolkit/0.2.3:
     resolution: {integrity: sha512-W0pESOST9hHFEmHq9kzMxAEhcPYuASdYCDw4FavKSyQKh3uOmH2slRXR/MhTKJY+gp1AauUDNd9DeE0cS4bV4A==}
     hasBin: true
@@ -110,4 +172,13 @@ packages:
     dependencies:
       leb128: 0.0.4
       wasm-json-toolkit: 0.2.3
+    dev: false
+
+  /wat-wasm/1.0.43:
+    resolution: {integrity: sha512-HlBkMdiWarWgF+skiPk4EX7akrb4O+YodVmVp6XzaWV/JQ6kN84cnkkqtm9UqCLOZ/37kYwG6XdYzmLTyfsVVg==}
+    hasBin: true
+    dependencies:
+      binaryen: 98.0.0
+      chalk: 3.0.0
+      wabt: 1.0.23
     dev: false

@@ -58,19 +58,19 @@ let wasmMeteredDef = await loader.instantiate(meteredWasm,{
 // * на примере SubInts - должно быть одинаково
 
 const result = wasmMeteredCustomTable.exports.SubInts(10,33);
-console.log(`CUSTOM Result:${result}, gas used ${energyForCustom * 1e-4}`) // result:720, gas used 0.4177
+console.log(`CUSTOM Result:${result}, energy used ${energyForCustom * 1e-4}`) // result:720, energy used 0.4177
 
 const result_def = wasmMeteredDef.exports.SubInts(10,33);
-console.log(`DEF Result:${result_def}, gas used ${energyForDef * 1e-4}`) // result:720, gas used 0.4177
+console.log(`DEF Result:${result_def}, energy used ${energyForDef * 1e-4}`) // result:720, energy used 0.4177
 
 
 // * на примере AddInts
 
 const resultPP = wasmMeteredCustomTable.exports.AddInts(10,33);
-console.log(`CUSTOM Result:${resultPP}, gas used ${energyForCustom * 1e-4}`) // result:720, gas used 0.4177
+console.log(`CUSTOM Result:${resultPP}, energy used ${energyForCustom * 1e-4}`) // result:720, energy used 0.4177
 
 const result_de = wasmMeteredDef.exports.AddInts(10,33);
-console.log(`DEF Result:${result_de}, gas used ${energyForDef * 1e-4}`) // result:720, gas used 0.4177
+console.log(`DEF Result:${result_de}, energy used ${energyForDef * 1e-4}`) // result:720, energy used 0.4177
 
 
 //console.log(module.exports.getX5(10))
@@ -79,7 +79,7 @@ console.log(`DEF Result:${result_de}, gas used ${energyForDef * 1e-4}`) // resul
 //------------------------ Тестировал чтоб оно в сумме считало
 
 // const result = wasmMetered.exports.getX5(10);
-// console.log(`result:${result}, gas used ${gasUsed * 1e-4}`) // result:720, gas used 0.4177
+// console.log(`result:${result}, energy used ${gasUsed * 1e-4}`) // result:720, energy used 0.4177
 
 //-------------------------- Тестирую энергию и строки ------------------------
 

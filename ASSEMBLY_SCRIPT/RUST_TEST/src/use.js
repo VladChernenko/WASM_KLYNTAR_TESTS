@@ -34,10 +34,10 @@ let wasmMetered = await loader.instantiate(meteredWasm,{
 
 const result = wasmMetered.exports.AddInts(100,20);
 
-console.log(`Result:${result}, gas used ${energyUsed * 1e-4}`);
+console.log(`Result:${result}, energy used ${energyUsed * 1e-4}`);
 
 //Another test
 
 let factorialResult = wasmMetered.exports.testFactorial(777);
 
-console.log(`Factorial result:${factorialResult}, gas used ${energyUsed * 1e-4}`);
+console.log(`Factorial result:${factorialResult}, energy used ${energyUsed * 1e-4}`);

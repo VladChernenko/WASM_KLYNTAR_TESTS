@@ -35,4 +35,4 @@ fs.writeFileSync('metered.wasm',meteredWasm)
 
 // const result = wasmMetered.exports.testFromOuter(10);
 
-// console.log(`Result:${result}, gas used ${energyUsed * 1e-4}`)
+// console.log(`Result:${result}, energy used ${energyUsed * 1e-4}`)

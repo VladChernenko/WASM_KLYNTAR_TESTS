@@ -32,7 +32,7 @@ console.log('Metered WASM => ',meteredWasm)
 //------------------------ Тестировал чтоб оно в сумме считало
 
 const result = wasmMetered.exports.getX5(10);
-console.log(`result:${result}, gas used ${gasUsed * 1e-4}`) // result:720, gas used 0.4177
+console.log(`result:${result}, energy used ${gasUsed * 1e-4}`) // result:720, energy used 0.4177
 
 //-------------------------- Тестирую энергию и строки ------------------------
 

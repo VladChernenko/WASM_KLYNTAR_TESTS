@@ -49,7 +49,7 @@ console.log(module.exports.AddInts(10,30))
 console.log(wasmMetered.exports.AddInts(10,30))
 
 const result = wasmMetered.exports.AddInts(1000,30)
-console.log(`result:${result}, gas used ${gasUsed * 1e-4}`) // result:720, gas used 0.4177
+console.log(`result:${result}, energy used ${gasUsed * 1e-4}`) // result:720, energy used 0.4177
 
 
 
@@ -70,4 +70,4 @@ console.log(`result:${result}, gas used ${gasUsed * 1e-4}`) // result:720, gas u
 // })
 
 // const result = instance.exports.fac(6)
-// console.log(`result:${result}, gas used ${gasUsed * 1e-4}`) // result:720, gas used 0.4177
+// console.log(`result:${result}, energy used ${gasUsed * 1e-4}`) // result:720, energy used 0.4177

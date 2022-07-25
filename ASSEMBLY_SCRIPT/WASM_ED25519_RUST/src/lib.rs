@@ -29,7 +29,6 @@ pub extern "C" fn verify(rawPubkey:&[u8],data:&[u8],signa:&[u8]) -> bool {
 }
 
 
-
 #[no_mangle]
 pub extern "C" fn AddInts(a:i32,b:i32) -> i32 {
 

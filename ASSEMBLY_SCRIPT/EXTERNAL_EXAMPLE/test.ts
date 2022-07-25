@@ -1,12 +1,13 @@
+export function testAdding(a: i32, b: i32 ): i32 {
 
-@external("some_kly_env.js","anotherName")
-declare function makeRecursive(n:i32):void;
+    let sum:i32 = 0;
 
+    for(let i:i32=0;i<a;i++){
 
-export function AddInts(a: i32, b: i32 ): i32 {
+        sum+=b
 
-    makeRecursive(a);
+    }
 
-    return a + b;
+    return sum;
    
 }

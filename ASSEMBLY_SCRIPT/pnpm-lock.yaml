@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@assemblyscript/loader': ^0.20.13
   assemblyscript: ^0.19.9
-  json-as: ^0.2.6
+  node-fetch: ^3.2.10
   wasm-json-toolkit: ^0.2.6
   wasm-metering: ^0.2.1
   wat-wasm: ^v1.0.43
@@ -11,7 +11,7 @@ specifiers:
 dependencies:
   '@assemblyscript/loader': 0.20.13
   assemblyscript: 0.19.23
-  json-as: 0.2.6
+  node-fetch: 3.2.10
   wasm-json-toolkit: 0.2.6
   wasm-metering: 0.2.1
   wat-wasm: 1.0.43
@@ -27,10 +27,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       color-convert: 2.0.1
-    dev: false
-
-  /as-string-sink/0.4.2:
-    resolution: {integrity: sha512-eOuOYPUwwv4QumoJIa7XxyS0OjXI6CyZz2dtba/hTeG5hzhq58HzAPD2FbHhjfYUXQaSAacFnJ9g2Zlfw56LgQ==}
     dev: false
 
   /assemblyscript/0.19.23:
@@ -97,15 +93,29 @@ packages:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
     dev: false
 
+  /data-uri-to-buffer/4.0.0:
+    resolution: {integrity: sha512-Vr3mLBA8qWmcuschSLAOogKgQ/Jwxulv3RNE4FXnYWRGujzrRWQI4m12fQqRkwX06C0KanhLr4hK+GydchZsaA==}
+    engines: {node: '>= 12'}
+    dev: false
+
+  /fetch-blob/3.2.0:
+    resolution: {integrity: sha512-7yAQpD2UMJzLi1Dqv7qFYnPbaPx7ZfFK6PiIxQ4PfkGPyNyl2Ugx+a/umUonmKqjhM4DnfbMvdX6otXq83soQQ==}
+    engines: {node: ^12.20 || >= 14.13}
+    dependencies:
+      node-domexception: 1.0.0
+      web-streams-polyfill: 3.2.1
+    dev: false
+
+  /formdata-polyfill/4.0.10:
+    resolution: {integrity: sha512-buewHzMvYL29jdeQTVILecSaZKnt/RJWjoZCF5OW60Z67/GmSLBkOFM7qh1PI3zFNtJbaZL5eQu1vLfazOwj4g==}
+    engines: {node: '>=12.20.0'}
+    dependencies:
+      fetch-blob: 3.2.0
+    dev: false
+
   /has-flag/4.0.0:
     resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
     engines: {node: '>=8'}
-    dev: false
-
-  /json-as/0.2.6:
-    resolution: {integrity: sha512-adGnfJB57eQwVnw0yP3b0yUBhRWa9QUr/JDAgjYV2yvbl5ckV9P3ARAGwXywiZhOE854k1zL29vB7uGRZhM0cQ==}
-    dependencies:
-      as-string-sink: 0.4.2
     dev: false
 
   /leb128/0.0.4:
@@ -117,6 +127,20 @@ packages:
 
   /long/5.2.0:
     resolution: {integrity: sha512-9RTUNjK60eJbx3uz+TEGF7fUr29ZDxR5QzXcyDpeSfeH28S9ycINflOgOlppit5U+4kNTe83KQnMEerw7GmE8w==}
+    dev: false
+
+  /node-domexception/1.0.0:
+    resolution: {integrity: sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==}
+    engines: {node: '>=10.5.0'}
+    dev: false
+
+  /node-fetch/3.2.10:
+    resolution: {integrity: sha512-MhuzNwdURnZ1Cp4XTazr69K0BTizsBroX7Zx3UgDSVcZYKF/6p0CBe4EUb/hLqmzVhl0UpYfgRljQ4yxE+iCxA==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dependencies:
+      data-uri-to-buffer: 4.0.0
+      fetch-blob: 3.2.0
+      formdata-polyfill: 4.0.10
     dev: false
 
   /safe-buffer/5.2.1:
@@ -181,4 +205,9 @@ packages:
       binaryen: 98.0.0
       chalk: 3.0.0
       wabt: 1.0.23
+    dev: false
+
+  /web-streams-polyfill/3.2.1:
+    resolution: {integrity: sha512-e0MO3wdXWKrLbL0DgGnUV7WHVuw9OUvL4hjgnPkIeEvESk74gAITi5G606JtZPp39cd8HA9VQzCIvA49LpPN5Q==}
+    engines: {node: '>= 8'}
     dev: false

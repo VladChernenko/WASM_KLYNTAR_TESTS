@@ -13,6 +13,7 @@
   "dependencies": {
     "@assemblyscript/loader": "^0.20.13",
     "assemblyscript": "^0.19.9",
+    "node-fetch": "^3.2.10",
     "wasm-json-toolkit": "^0.2.6",
     "wasm-metering": "^0.2.1",
     "wat-wasm": "^v1.0.43"
